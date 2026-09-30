@@ -1,0 +1,149 @@
+/* ========== 整體版面：置中、限制寬度 ========== */
+header,
+main,
+footer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header h1 {
+  color: #1e5f8c;
+}
+
+section {
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+/* ========== 新增任務表單 ========== */
+#task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#task-form label {
+  flex-basis: 100%;
+}
+
+#task-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #999999;
+  border-radius: 6px;
+}
+
+#add-btn {
+  padding: 8px 20px;
+  font-size: 16px;
+  background: #1e5f8c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+#add-btn:hover {
+  background: #808080;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  font-size: 15px;
+  background: white;
+  color: #1e5f8c;
+  border: 1px solid #1e5f8c;
+  border-radius: 6px;
+}
+
+.filter-btn.active {       /* 目前選取的篩選條件 */
+  background: #1e5f8c;
+  color: white;
+}
+
+/* ========== 任務清單 ========== */
+#task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.task-item label {
+  flex: 1;
+}
+
+.task-item.completed label {
+  color: #888888;
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  padding: 4px 12px;
+  background: white;
+  color: #b3261e;
+  border: 1px solid #b3261e;
+  border-radius: 6px;
+}
+
+/* ========== 統計資訊 ========== */
+#stats p {
+  color: #555555;
+}
+
+/* ========== 只在螢幕寬度<=480px時起作用 ========== */
+@media (max-width: 480px) {
+  header,
+  main,
+  footer {
+    padding: 0 8px;
+  }
+ 
+  header h1 {
+    font-size: 24px;
+  }
+ 
+  section {
+    padding: 12px;
+  }
+ 
+  #task-input {
+    min-width: 0;
+  }
+ 
+  #filters {
+    display: flex;
+    gap: 6px;
+  }
+ 
+  .filter-btn {
+    flex: 1;
+    padding: 8px 0;
+  }
+ 
+  .task-item label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+ 
+  .delete-btn {
+    flex-shrink: 0;
+  }
+}
+
+
