@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Task Manager</h1>
+    </header>
+
+    <main>
+        <section id="add-section">
+            <h2>新增任務</h2>
+            <form id="task-form">
+                <label for="task-input">任務名稱：</label>
+                <input type="text" id="task-input" name="task" placeholder="請輸入任務名稱">
+                <button type="submit" id="add-btn">新增</button>
+            </form>
+        </section>
+        
+        <!-- 篩選區域 -->
+        <section id="filter-section">
+            <h2>篩選</h2>
+            <div id="filters">
+                <button type="button" class="filter-btn" data-filter="all">全部</button>
+                <button type="button" class="filter-btn" data-filter="active">未完成</button>
+                <button type="button" class="filter-btn" data-filter="completed">已完成</button>
+            </div>
+        </section>
+
+        <!-- 任務清單 -->
+        <section id="list-section">
+            <h2>任務清單</h2>
+            <ul id="task-list">
+                <!-- 任務由 script.js 產生 -->
+            </ul>
+        </section>
+    </main>
+
+    <footer id="stats">
+        <p>
+            共 <span id="total-count">0</span> 項
+            未完成 <span id="active-count">0</span> 項
+            已完成 <span id="completed-count">0</span> 項
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
